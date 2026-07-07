@@ -191,7 +191,7 @@ svg .mark:hover{opacity:.8}
   </div>
 
   <div class="stats">
-    <div class="stat"><div class="lbl">Total paid spend</div><div class="val">₹39.28L+</div></div>
+    <div class="stat"><div class="lbl">Total paid spend</div><div class="val">₹39.28L+</div><div class="sub">SaaS ₹36.59L · Hardware ₹2.70L (Google + Meta campaigns)</div></div>
     <div class="stat m"><div class="lbl">SaaS leads (ads &amp; forms)</div><div class="val">3,413</div><div class="sub">HubSpot, Hardware &amp; P2P/Buzz campaign excluded</div></div>
     <div class="stat l"><div class="lbl">Hardware leads (Bigin)</div><div class="val">3,188</div><div class="sub">Feb–Jun 2026 · Bigin export (Jul 3)</div></div>
     <div class="stat d"><div class="lbl">Inbound deals — SaaS</div><div class="val">45</div><div class="sub">₹364.9L total · ₹294.5L excl. Inactive (18 deals, ₹70.42L) · ₹210.2L without the Wattpower deal (₹154.75L)</div></div>
@@ -241,6 +241,13 @@ svg .mark:hover{opacity:.8}
       <div class="card-hd"><h4>Meta Ads — monthly detail</h4><span class="tag brand">Meta Ads MCP + tracker cross-check</span></div>
       <div class="card-body tbl-wrap">
         <table id="tblMeta"></table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>Hardware campaign spend, by platform — monthly</h4><span class="tag good">₹2.70L total · Google + Meta, Hardware-tagged campaigns only</span></div>
+      <div class="card-body tbl-wrap">
+        <table id="tblHwSpend"></table>
       </div>
     </div>
   </section>
@@ -412,16 +419,16 @@ svg .mark:hover{opacity:.8}
         <div class="card-hd"><h4>Known paid spend vs. inbound SaaS deal value created</h4><span class="tag muted">Jul 2025 – Jun 2026</span></div>
         <div class="card-body">
           <table><tbody>
-            <tr><td style="white-space:normal">Google Ads + Meta spend (full-year, tracker-reconciled)</td><td style="text-align:right;font-weight:700">₹24.79L</td></tr>
-            <tr><td style="white-space:normal">+ LinkedIn (tracker, 10 of 12 mo. — Jul–Aug'25 unknown)</td><td style="text-align:right;font-weight:700">₹14.49L</td></tr>
-            <tr class="total"><td style="white-space:normal">Total known paid spend (floor)</td><td style="text-align:right">₹39.28L</td></tr>
+            <tr><td style="white-space:normal">Google Ads + Meta spend, SaaS-only (Hardware campaigns removed)</td><td style="text-align:right;font-weight:700">₹22.09L</td></tr>
+            <tr><td style="white-space:normal">+ LinkedIn (tracker, 10 of 12 mo. — not splittable by business line)</td><td style="text-align:right;font-weight:700">₹14.49L</td></tr>
+            <tr class="total"><td style="white-space:normal">Total known SaaS-attributable spend (floor)</td><td style="text-align:right">₹36.59L</td></tr>
             <tr><td style="white-space:normal">SaaS inbound deal value created — all 45 deals, incl. the Wattpower deal (₹154.75L)</td><td style="text-align:right;font-weight:700">₹364.9L</td></tr>
             <tr style="background:var(--brand-wash)"><td style="white-space:normal;color:var(--brand);font-weight:700">— excluding Inactive-stage deals (18 deals, ₹70.42L)</td><td style="text-align:right;font-weight:700;color:var(--brand)">₹294.5L</td></tr>
             <tr><td style="white-space:normal">— excluding the Wattpower deal</td><td style="text-align:right;font-weight:700">₹210.2L</td></tr>
-            <tr class="total"><td style="white-space:normal">Pipeline created per ₹1 known spend (incl. Wattpower)</td><td style="text-align:right">≈ ₹9.3</td></tr>
-            <tr class="total"><td style="white-space:normal">Pipeline created per ₹1 known spend (excl. Wattpower)</td><td style="text-align:right">≈ ₹5.4</td></tr>
+            <tr class="total"><td style="white-space:normal">Pipeline created per ₹1 known spend (incl. Wattpower)</td><td style="text-align:right">≈ ₹10.0</td></tr>
+            <tr class="total"><td style="white-space:normal">Pipeline created per ₹1 known spend (excl. Wattpower)</td><td style="text-align:right">≈ ₹5.7</td></tr>
           </tbody></table>
-          <div class="insight">This ratio blends <b>pipeline created</b> (not revenue realized) against total company paid spend, including spend that never touched SaaS at all. It is illustrative of scale, not a defensible per-channel return — <b>do not use it to justify reallocating budget</b> without proper campaign-level tagging first.</div>
+          <div class="insight">₹2.70L of Google + Meta spend on Hardware-tagged campaigns (<code>Hardware_Ind</code>, <code>HW_New_Aud</code>, <code>HW_Tier1</code>) has been removed from the numerator above — see the Hardware spend card in §Spend. LinkedIn still can't be split by business line, so it's included in full. This ratio blends <b>pipeline created</b> (not revenue realized) against SaaS-attributable spend — illustrative of scale, not a defensible per-channel return.</div>
         </div>
       </div>
   </section>
@@ -747,6 +754,24 @@ svg .mark:hover{opacity:.8}
       rows += "<tr><td>"+MONTHS[i]+"</td><td style='text-align:right'>"+(liSpend[i]===null?"<span style='color:var(--text-muted);font-weight:700'>NA</span>":fmtInr(liSpend[i]))+"</td></tr>";
     }
     rows += "<tr class='total'><td>FY Total (known, 10 mo.)</td><td style='text-align:right'>"+fmtInr(liTotal)+"</td></tr></tbody>";
+    t.innerHTML = head + rows;
+  })();
+
+  // Hardware campaign spend, by platform, monthly — Google Ads "Hardware_Ind" + Meta "HW_New_Aud"/"HW_Tier1"
+  // Instagram post promo excluded per instruction
+  (function(){
+    var hwGoogle = [0,0,0,0,0,0,30268.63,29966.60,28473.48,36910.02,19507.52,44654.41];
+    var hwMeta    = [0,0,0,0,0,0,0,0,11253.85,29234.86,7781.10,31494.67];
+    var t = document.getElementById('tblHwSpend');
+    var head = "<thead><tr><th>Month</th><th style='text-align:right'>Google Ads</th><th style='text-align:right'>Meta</th><th style='text-align:right'>Total</th></tr></thead>";
+    var rows = "<tbody>";
+    var gSum=0, mSum=0;
+    for (var i=0;i<MONTHS.length;i++){
+      var tot = hwGoogle[i]+hwMeta[i];
+      gSum += hwGoogle[i]; mSum += hwMeta[i];
+      rows += "<tr><td>"+MONTHS[i]+"</td><td style='text-align:right'>"+(hwGoogle[i]?fmtInr(hwGoogle[i]):"—")+"</td><td style='text-align:right'>"+(hwMeta[i]?fmtInr(hwMeta[i]):"—")+"</td><td style='text-align:right;font-weight:700'>"+(tot?fmtInr(tot):"—")+"</td></tr>";
+    }
+    rows += "<tr class='total'><td>FY Total</td><td style='text-align:right'>"+fmtInr(gSum)+"</td><td style='text-align:right'>"+fmtInr(mSum)+"</td><td style='text-align:right'>"+fmtInr(gSum+mSum)+"</td></tr></tbody>";
     t.innerHTML = head + rows;
   })();
 
