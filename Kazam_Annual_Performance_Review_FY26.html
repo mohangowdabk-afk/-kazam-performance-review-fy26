@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Kazam — Annual Marketing Performance Review (Jul 2025–Jun 2026)</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#f2f1ee;
+  --text-1:#0b0b0b; --text-2:#52514e; --text-muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,0.10);
+  --brand:#b91c1c; --brand-ink:#ffffff; --brand-wash:#fdecec;
+  --s1:#2a78d6; --s2:#1baf7a; --s3:#eda100; --s4:#008300; --s5:#4a3aa7; --s6:#e87ba4;
+  --good:#0ca30c; --warn:#fab219; --warn-ink:#8a5a00; --serious:#ec835a; --critical:#d03b3b;
+  --unattr:#9c9a93; --shadow:0 1px 2px rgba(11,11,11,.04),0 8px 24px rgba(11,11,11,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --page:#0d0d0d; --surface:#1a1a19; --surface-2:#232321;
+    --text-1:#ffffff; --text-2:#c3c2b7; --text-muted:#918f88;
+    --grid:#2c2c2a; --axis:#3d3d3a; --border:rgba(255,255,255,0.12);
+    --brand:#e0453f; --brand-ink:#ffffff; --brand-wash:#2a1615;
+    --s1:#3987e5; --s2:#199e70; --s3:#c98500; --s4:#1ea51e; --s5:#9085e9; --s6:#d55181;
+    --good:#0ca30c; --warn:#fab219; --warn-ink:#fab219; --serious:#ec835a; --critical:#e66767;
+    --unattr:#75736c; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0d0d0d; --surface:#1a1a19; --surface-2:#232321;
+  --text-1:#ffffff; --text-2:#c3c2b7; --text-muted:#918f88;
+  --grid:#2c2c2a; --axis:#3d3d3a; --border:rgba(255,255,255,0.12);
+  --brand:#e0453f; --brand-ink:#ffffff; --brand-wash:#2a1615;
+  --s1:#3987e5; --s2:#199e70; --s3:#c98500; --s4:#1ea51e; --s5:#9085e9; --s6:#d55181;
+  --good:#0ca30c; --warn:#fab219; --warn-ink:#fab219; --serious:#ec835a; --critical:#e66767;
+  --unattr:#75736c; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#f2f1ee;
+  --text-1:#0b0b0b; --text-2:#52514e; --text-muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,0.10);
+  --brand:#b91c1c; --brand-ink:#ffffff; --brand-wash:#fdecec;
+  --s1:#2a78d6; --s2:#1baf7a; --s3:#eda100; --s4:#008300; --s5:#4a3aa7; --s6:#e87ba4;
+  --good:#0ca30c; --warn:#fab219; --warn-ink:#8a5a00; --serious:#ec835a; --critical:#d03b3b;
+  --unattr:#9c9a93; --shadow:0 1px 2px rgba(11,11,11,.04),0 8px 24px rgba(11,11,11,.05);
+}
+html{background:var(--page)}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--page);color:var(--text-1);line-height:1.5;-webkit-font-smoothing:antialiased}
+::selection{background:var(--brand);color:var(--brand-ink)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px 80px}
+a{color:inherit}
+
+/* ===== Header ===== */
+header.top{background:var(--surface);border-bottom:3px solid var(--brand);position:sticky;top:0;z-index:50;box-shadow:var(--shadow)}
+.top-inner{max-width:1160px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brandmark{display:flex;align-items:center;gap:10px}
+.brandmark .sq{width:30px;height:30px;border-radius:7px;background:var(--brand);color:var(--brand-ink);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+.brandmark h1{font-size:15px;font-weight:800;letter-spacing:-.2px}
+.brandmark p{font-size:11px;color:var(--text-muted);margin-top:1px}
+nav.pills{display:flex;gap:6px;flex-wrap:wrap}
+nav.pills a{font-size:11.5px;font-weight:600;color:var(--text-2);text-decoration:none;padding:6px 11px;border-radius:20px;background:var(--surface-2);border:1px solid var(--border);white-space:nowrap;transition:background .15s,color .15s}
+nav.pills a:hover{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+
+/* ===== Hero / period banner ===== */
+.hero{padding:28px 0 6px}
+.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--brand);margin-bottom:8px}
+.hero h2{font-size:26px;font-weight:800;letter-spacing:-.5px;text-wrap:balance;max-width:44ch}
+.hero p.lede{font-size:13.5px;color:var(--text-2);margin-top:8px;max-width:64ch}
+.hero .meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:11.5px;color:var(--text-muted)}
+.hero .meta b{color:var(--text-1)}
+
+/* ===== Stat tiles ===== */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 16px 14px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.stat::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--s1)}
+.stat.m::after{background:var(--s2)}
+.stat.l::after{background:var(--s3)}
+.stat.d::after{background:var(--good)}
+.stat.w::after{background:var(--critical)}
+.stat .lbl{font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px}
+.stat .val{font-size:22px;font-weight:800;letter-spacing:-.4px;font-variant-numeric:tabular-nums}
+.stat .sub{font-size:11px;color:var(--text-2);margin-top:4px}
+
+/* ===== Section shell ===== */
+section.sec{padding:44px 0 8px;border-top:1px solid var(--border)}
+section.sec:first-of-type{border-top:none}
+.sec-hd{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px}
+.sec-ic{width:36px;height:36px;border-radius:9px;background:var(--brand-wash);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;flex-shrink:0}
+.sec-hd h3{font-size:18px;font-weight:800;letter-spacing:-.3px}
+.sec-hd p{font-size:12px;color:var(--text-2);margin-top:2px;max-width:70ch}
+
+.grid2{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+.card-hd{padding:12px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.card-hd h4{font-size:13px;font-weight:700}
+.card-body{padding:16px 18px}
+.tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.2px}
+.tag.brand{background:var(--brand-wash);color:var(--brand)}
+.tag.good{background:rgba(12,163,12,.13);color:var(--good)}
+.tag.warn{background:rgba(250,178,25,.16);color:var(--warn-ink)}
+.tag.crit{background:rgba(208,59,59,.13);color:var(--critical)}
+.tag.muted{background:var(--surface-2);color:var(--text-muted)}
+
+.chart-wrap{width:100%;overflow-x:auto}
+.chart-wrap svg{display:block;min-width:560px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--text-2)}
+.legend .li{display:flex;align-items:center;gap:6px}
+.legend .sw{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.legend .sw.hatched{background-image:repeating-linear-gradient(45deg,var(--unattr) 0 2px,transparent 2px 5px);border:1px solid var(--unattr)}
+
+.insight{background:var(--brand-wash);border-left:3px solid var(--brand);border-radius:0 8px 8px 0;padding:11px 15px;font-size:12px;color:var(--text-2);line-height:1.65;margin-top:12px}
+.insight b{color:var(--text-1)}
+.insight .g{color:var(--good);font-weight:700}
+.insight .r{color:var(--critical);font-weight:700}
+
+.gap-box{border:1.5px dashed var(--critical);background:rgba(208,59,59,.05);border-radius:var(--radius);padding:20px 22px;margin-bottom:16px}
+.gap-box h4{font-size:14px;font-weight:800;color:var(--critical);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.gap-box p{font-size:12.5px;color:var(--text-2);line-height:1.6;max-width:72ch}
+.gap-box ul{margin:10px 0 0 18px;font-size:12.5px;color:var(--text-2);line-height:1.7}
+
+table{width:100%;border-collapse:collapse;font-size:12px}
+table th{background:var(--surface-2);font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--text-muted);padding:8px 12px;text-align:left;border-bottom:2px solid var(--border);white-space:nowrap}
+table td{padding:8px 12px;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums;white-space:nowrap}
+table tr:last-child td{border-bottom:none}
+table tr.total td{font-weight:800;background:var(--surface-2)}
+table tr:hover td{background:var(--surface-2)}
+.tbl-wrap{overflow-x:auto}
+
+.bars-list{display:flex;flex-direction:column;gap:9px}
+.bar-row{display:flex;align-items:center;gap:10px}
+.bar-row .lbl{font-size:11.5px;color:var(--text-2);width:168px;flex-shrink:0}
+.bar-row .track{flex:1;height:10px;background:var(--surface-2);border-radius:5px;overflow:hidden}
+.bar-row .fill{height:100%;border-radius:5px}
+.bar-row .val{font-size:11.5px;font-weight:700;width:96px;text-align:right;flex-shrink:0;font-variant-numeric:tabular-nums}
+
+.recs{display:grid;grid-template-columns:1fr;gap:10px}
+.rec{display:flex;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:13px 16px}
+.rec .n{font-size:11px;font-weight:800;color:var(--brand);flex-shrink:0;width:20px}
+.rec .t{font-size:12.5px;color:var(--text-2);line-height:1.6}
+.rec .t b{color:var(--text-1)}
+
+footer{margin-top:50px;padding:22px 0;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+html{scroll-behavior:smooth}
+#tip{position:fixed;display:none;z-index:300;background:var(--text-1);color:var(--surface);font-size:11.5px;font-weight:600;padding:7px 11px;border-radius:7px;pointer-events:none;line-height:1.55;max-width:280px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+nav.pills a.active{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.legend .li.clickable{cursor:pointer;padding:3px 9px;border-radius:14px;border:1px solid var(--border);transition:background .15s;-webkit-user-select:none;user-select:none}
+.legend .li.clickable:hover{background:var(--surface-2)}
+.legend .li.off{opacity:.45}
+.legend .li.off .sw{background:var(--text-muted)!important}
+svg .mark{transition:opacity .1s;cursor:default}
+svg .mark:hover{opacity:.8}
+.hdtags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brandmark">
+      <div class="sq">K</div>
+      <div><h1>Kazam — Internal Performance Review</h1><p>FY marketing review · Jul 2025 – Jun 2026</p></div>
+    </div>
+    <nav class="pills">
+      <a href="#summary">Summary</a>
+      <a href="#spend">Spend</a>
+      <a href="#leads">Leads</a>
+      <a href="#deals">Deals</a>
+      <a href="#attribution">Attribution</a>
+      <a href="#organic">Organic</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero" id="summary">
+    <div class="eyebrow">Internal · Not for external distribution</div>
+    <h2>12-month marketing performance across both business lines — SaaS and Hardware</h2>
+    <p class="lede">Covers paid spend (Google Ads, Meta, LinkedIn), lead generation across paid/direct/organic — split cleanly by business line and filtered to ads &amp; forms only — deals created via inbound marketing, and pipeline attribution, for the trailing 12 full months.</p>
+    <div class="meta">
+      <span>Period: <b>1 Jul 2025 – 30 Jun 2026</b></span>
+      <span>Generated: <b>6 Jul 2026</b></span>
+      <span>Sources: <b>HubSpot · Zoho Bigin · Meta Ads · Google Ads (Windsor.ai) · Marketing_Leads_Tracker.xlsx</b></span>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="lbl">Total paid spend</div><div class="val">₹39.28L+</div></div>
+    <div class="stat m"><div class="lbl">SaaS leads (ads &amp; forms)</div><div class="val">3,413</div><div class="sub">HubSpot, Hardware &amp; P2P/Buzz campaign excluded</div></div>
+    <div class="stat l"><div class="lbl">Hardware leads (Bigin)</div><div class="val">3,188</div><div class="sub">Feb–Jun 2026 · Bigin export (Jul 3)</div></div>
+    <div class="stat d"><div class="lbl">Inbound deals — SaaS</div><div class="val">45</div><div class="sub">₹364.9L total · ₹210.2L without the Wattpower deal (₹154.75L)</div></div>
+    <div class="stat"><div class="lbl">Hardware Closed Won</div><div class="val">14</div><div class="sub">₹3,31,225 · Bigin export (Jul 3) · all 14 carry value</div></div>
+    <div class="stat w"><div class="lbl">Organic sessions (Search + Social)</div><div class="val">42,594</div><div class="sub">GA4 · FY total · see §Organic</div></div>
+  </div>
+
+  <!-- ============ SPEND ============ -->
+  <section class="sec" id="spend">
+    <div class="sec-hd">
+      <div class="sec-ic">₹</div>
+      <div><h3>Spend across platforms</h3></div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>Monthly spend — Google Ads, Meta &amp; LinkedIn</h4><div class="hdtags"><span class="tag brand">Tracker-reconciled Nov'25–Jun'26 · live Jul/Aug'25</span><span class="tag muted">Click legend to toggle · hover for values</span></div></div>
+      <div class="card-body">
+        <div class="chart-wrap"><svg id="chartSpend" viewBox="0 0 900 300"></svg></div>
+        <div class="legend" id="legendSpend"></div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-hd"><h4>FY spend by platform</h4><span class="tag muted">₹ lakh (L)</span></div>
+        <div class="card-body">
+          <div class="bars-list" id="platformBars"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-hd"><h4>LinkedIn — monthly, from tracker</h4><span class="tag good">Marketing_Leads_Tracker.xlsx</span></div>
+        <div class="card-body">
+          <table id="tblLinkedIn"></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>Google Ads — monthly detail</h4><span class="tag brand">Windsor.ai + tracker cross-check</span></div>
+      <div class="card-body tbl-wrap">
+        <table id="tblGoogleAds"></table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>Meta Ads — monthly detail</h4><span class="tag brand">Meta Ads MCP + tracker cross-check</span></div>
+      <div class="card-body tbl-wrap">
+        <table id="tblMeta"></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LEADS ============ -->
+  <section class="sec" id="leads">
+    <div class="sec-hd">
+      <div class="sec-ic">◎</div>
+      <div><h3>Leads generated — paid, direct &amp; organic</h3></div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>SaaS leads per month, by source (ads &amp; forms only)</h4><div class="hdtags"><span class="tag brand">Live · HubSpot, Hardware &amp; P2P excluded · 3,413 FY total</span><span class="tag muted">Click legend to toggle</span></div></div>
+      <div class="card-body">
+        <div class="chart-wrap"><svg id="chartLeads" viewBox="0 0 900 320"></svg></div>
+        <div class="legend" id="legendLeads"></div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-hd"><h4>FY total — SaaS (ads &amp; forms)</h4><span class="tag muted">3,413 leads</span></div>
+        <div class="card-body"><div class="bars-list" id="sourceBars"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-hd"><h4>Hardware by source — Bigin</h4><span class="tag good">3,188 leads · Feb–Jun'26 · Bigin export</span></div>
+        <div class="card-body"><div class="bars-list" id="hwSourceBars"></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>P2P Energy — "Buzz" campaign (Meta)</h4><span class="tag warn">Separate business line · kept out of SaaS totals</span></div>
+      <div class="card-body">
+        <p style="font-size:12.5px;color:var(--text-2);line-height:1.7;margin-bottom:12px">A distinct Facebook Lead Ads campaign (<code>Buzz_Formfills-copy</code>) ran mostly in <b>Aug 2025 — 725 Paid Social leads in that single month</b>, none of them SaaS demand. This is why the SaaS chart above previously showed an unexplained Aug spike; it's now removed from SaaS and broken out here. Total across the year: <b>813 leads</b> (725 Paid Social + 88 on other channels), with none tagged to a <code>lead_category</code> in HubSpot — it isn't SaaS, Hardware, or explicitly P2P-tagged, just this campaign's own UTM.</p>
+        <div class="chart-wrap"><svg id="chartP2P" viewBox="0 0 900 240"></svg></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>Hardware leads per month — Bigin</h4><span class="tag brand">Bigin export (Jul 3) · 3,188 leads · Feb–Jun'26</span></div>
+      <div class="card-body">
+        <div class="chart-wrap"><svg id="chartHwLeads" viewBox="0 0 900 300"></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEALS ============ -->
+  <section class="sec" id="deals">
+    <div class="sec-hd">
+      <div class="sec-ic">◆</div>
+      <div><h3>Deals created via inbound marketing</h3><p>SaaS deals attributed to a non-offline source in HubSpot, and Hardware lead outcomes from the Bigin export (3 Jul 2026).</p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>SaaS inbound deals — monthly count &amp; value</h4><span class="tag brand">Live · HubSpot · 45 deals · ₹364.9L</span></div>
+      <div class="card-body">
+        <div class="chart-wrap"><svg id="chartDeals" viewBox="0 0 900 280"></svg></div>
+        <div class="insight">March 2026 (₹184.1L) is dominated by a single outlier deal — <b>Wattpower Systems, ₹154.75L</b>. Excluding it, March is a normal ~₹29.4L and the FY total is <b>₹210.2L across 45 deals</b> (~₹4.7L average deal size). Deal count trended up through the year: 3/mo in Jul–Aug'25 to 8 in Jun'26.</div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-hd"><h4>SaaS deal stage mix</h4><span class="tag muted">45 inbound deals</span></div>
+        <div class="card-body"><div class="bars-list" id="stageBars"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-hd"><h4>Hardware Closed Won — monthly</h4><span class="tag good">Bigin export (Jul 3) · all 14 carry value</span></div>
+        <div class="card-body">
+          <table><thead><tr><th>Month</th><th style="text-align:right">Won</th><th style="text-align:right">₹ recorded</th></tr></thead><tbody id="hwWonRows"></tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>SaaS deal value by source / platform</h4><span class="tag muted">45 inbound deals · ₹364.93L</span></div>
+      <div class="card-body"><div class="bars-list" id="dealSourceBars"></div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>All 45 inbound deals — stage, source &amp; value</h4><span class="tag brand">Live · HubSpot · links open the deal record</span></div>
+      <div class="card-body">
+        <details>
+          <summary style="cursor:pointer;font-size:12.5px;font-weight:700;color:var(--brand);padding:2px 0">Show / hide the full deal list</summary>
+          <div class="tbl-wrap" style="margin-top:12px">
+          <table>
+            <thead><tr><th>Deal</th><th>Source</th><th style="text-align:right">Amount</th><th>HubSpot</th></tr></thead>
+            <tbody>
+              <tr class="total"><td colspan="4">Closed Won — 12 deals · ₹58.79L</td></tr>
+              <tr><td>Samsung Electronics</td><td>Direct</td><td style="text-align:right">₹34.20L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/231569595115" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>RL Dynamic Engineering</td><td>Paid Search</td><td style="text-align:right">₹7.60L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/324843751110" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>ANAND Group India</td><td>Direct</td><td style="text-align:right">₹5.50L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/92874981072" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>FEYN</td><td>Direct</td><td style="text-align:right">₹4.70L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/238233671399" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Gangashree EV — Expansion to Premium</td><td>Paid Search</td><td style="text-align:right">₹2.81L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/331480209119" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>ECO Charge</td><td>Paid Search</td><td style="text-align:right">₹1.50L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/154541036273" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>ECO Charge (Expansion)</td><td>Paid Search</td><td style="text-align:right">₹1.50L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/288906927828" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Megha Solar</td><td>Direct</td><td style="text-align:right">₹0.60L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/303032993517" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>DiodeEV, Odisha</td><td>Paid Search</td><td style="text-align:right">₹0.50L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/110968789697" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Gangashree EV — Basic Plan</td><td>Paid Search</td><td style="text-align:right">₹0.19L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/331610348223" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>B2C — Sumeet Gohil</td><td>Direct</td><td style="text-align:right">₹0.13L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/129525020363" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Wired BOX Company</td><td>Direct</td><td style="text-align:right">₹0.07L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/165418512098" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr class="total"><td colspan="4">Decision Maker Bought-In — 3 deals · ₹175.15L</td></tr>
+              <tr><td>Wattpower Systems</td><td>Paid Search</td><td style="text-align:right">₹154.75L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/309233721019" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Switch-E Ride — BSMS</td><td>Direct</td><td style="text-align:right">₹16.40L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/331240923864" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>JetEV</td><td>Direct</td><td style="text-align:right">₹4.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/218026950386" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr class="total"><td colspan="4">Contract Sent — 1 deal · ₹14.88L</td></tr>
+              <tr><td>Renascent Logique — Anarock Vasista</td><td>Direct</td><td style="text-align:right">₹14.88L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/316631939817" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr class="total"><td colspan="4">Qualified to Buy — 3 deals · ₹14.02L</td></tr>
+              <tr><td>DJ Vending Philippines Corp</td><td>Paid Search</td><td style="text-align:right">₹6.22L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/324965526214" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Hardeep S P — Premium CMS &amp; WLA</td><td>Direct</td><td style="text-align:right">₹4.50L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/331236474591" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Charge Fast X</td><td>Paid Search</td><td style="text-align:right">₹3.30L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/332999682758" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr class="total"><td colspan="4">Appointment Scheduled — 2 deals · ₹13.06L</td></tr>
+              <tr><td>Chajigo</td><td>Direct</td><td style="text-align:right">₹8.56L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/330021373671" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Zeus Docks — Premium CMS &amp; WLA</td><td>Direct</td><td style="text-align:right">₹4.50L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/331240194759" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr class="total"><td colspan="4">Presentation Scheduled — 2 deals · ₹10.50L</td></tr>
+              <tr><td>DYU EV — CMS + WLA</td><td>Direct</td><td style="text-align:right">₹6.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/332789346024" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>ETPL</td><td>Direct</td><td style="text-align:right">₹4.50L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/326399869640" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr class="total"><td colspan="4">Inactive — 18 deals · ₹61.62L</td></tr>
+              <tr><td>Massive Earth Fellowship</td><td>Direct</td><td style="text-align:right">₹18.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/215719811788" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Marquay Trading</td><td>Paid Search</td><td style="text-align:right">₹6.60L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/322354799330" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Aumovio</td><td>Direct</td><td style="text-align:right">₹6.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/161660022466" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Reysen Energy</td><td>Paid Social</td><td style="text-align:right">₹5.50L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/316631332574" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Terone — Premium CMS &amp; White Label App</td><td>Direct</td><td style="text-align:right">₹4.05L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/237429675751" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Klickwatt CMS</td><td>Direct</td><td style="text-align:right">₹4.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/325251772152" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Zoop — OCPI Gateway</td><td>Direct</td><td style="text-align:right">₹4.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/313216175809" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Electrogo Mobility</td><td>Paid Search</td><td style="text-align:right">₹4.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/303031431872" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>OFA International Consultants</td><td>Paid Social (LinkedIn)</td><td style="text-align:right">₹3.83L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/326363899589" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>K2k Power</td><td>Direct</td><td style="text-align:right">₹3.50L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/253057084091" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>EVQ Tech</td><td>Direct</td><td style="text-align:right">₹3.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/222859183855" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>India Liner</td><td>Paid Social</td><td style="text-align:right">₹2.50L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/319640003279" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Sugdneft</td><td>Direct</td><td style="text-align:right">₹1.34L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/214958751447" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Sonik Mobility</td><td>Direct</td><td style="text-align:right">₹1.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/143486499547" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>VSSR Electrical Services</td><td>Direct</td><td style="text-align:right">₹1.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/145081119450" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Emfex Energy</td><td>Direct</td><td style="text-align:right">₹1.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/299752496860" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Ezit</td><td>Direct</td><td style="text-align:right">₹0.70L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/319866588901" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Kwik EV Charging</td><td>Direct</td><td style="text-align:right">₹0.40L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/161660339958" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr class="total"><td colspan="4">Closed Lost — 4 deals · ₹7.61L</td></tr>
+              <tr><td>PriEdge (Anjaneya)</td><td>Direct</td><td style="text-align:right">₹5.00L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/314462365428" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Hyenr</td><td>Referral</td><td style="text-align:right">₹1.50L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/121105637105" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Bahwan CyberTek</td><td>Direct</td><td style="text-align:right">₹0.79L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/145081124560" target="_blank" rel="noopener">Open ↗</a></td></tr>
+              <tr><td>Orchid Legacy Society — Basic CMS</td><td>Direct</td><td style="text-align:right">₹0.32L</td><td><a href="https://app.hubspot.com/contacts/242093352/record/0-3/242650742478" target="_blank" rel="noopener">Open ↗</a></td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-hd"><h4>Hardware lead status — disposition</h4><span class="tag brand">Bigin export (Jul 3) · 3,188 leads · Feb–Jun'26</span></div>
+        <div class="card-body"><div class="bars-list" id="hwStatusBars"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-hd"><h4>Hardware quoted value by lead status</h4><span class="tag good">₹623.21L total quoted · Bigin export</span></div>
+        <div class="card-body"><div class="bars-list" id="hwValueBars"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ATTRIBUTION ============ -->
+  <section class="sec" id="attribution">
+    <div class="sec-hd">
+      <div class="sec-ic">↗</div>
+      <div><h3>Attribution to sales pipeline via inbound campaigns</h3><p>A directional view, not a formal multi-touch model — no conversion-path/touchpoint data is available from any connected source. Treat as a rough comparison of spend vs. pipeline created, not ROAS.</p></div>
+    </div>
+
+      <div class="card">
+        <div class="card-hd"><h4>Known paid spend vs. inbound SaaS deal value created</h4><span class="tag muted">Jul 2025 – Jun 2026</span></div>
+        <div class="card-body">
+          <table><tbody>
+            <tr><td style="white-space:normal">Google Ads + Meta spend (full-year, tracker-reconciled)</td><td style="text-align:right;font-weight:700">₹24.79L</td></tr>
+            <tr><td style="white-space:normal">+ LinkedIn (tracker, 10 of 12 mo. — Jul–Aug'25 unknown)</td><td style="text-align:right;font-weight:700">₹14.49L</td></tr>
+            <tr class="total"><td style="white-space:normal">Total known paid spend (floor)</td><td style="text-align:right">₹39.28L</td></tr>
+            <tr><td style="white-space:normal">SaaS inbound deal value created — all 45 deals, incl. the Wattpower deal (₹154.75L)</td><td style="text-align:right;font-weight:700">₹364.9L</td></tr>
+            <tr><td style="white-space:normal">— excluding the Wattpower deal</td><td style="text-align:right;font-weight:700">₹210.2L</td></tr>
+            <tr class="total"><td style="white-space:normal">Pipeline created per ₹1 known spend (incl. Wattpower)</td><td style="text-align:right">≈ ₹9.3</td></tr>
+            <tr class="total"><td style="white-space:normal">Pipeline created per ₹1 known spend (excl. Wattpower)</td><td style="text-align:right">≈ ₹5.4</td></tr>
+          </tbody></table>
+          <div class="insight">This ratio blends <b>pipeline created</b> (not revenue realized) against total company paid spend, including spend that never touched SaaS at all. It is illustrative of scale, not a defensible per-channel return — <b>do not use it to justify reallocating budget</b> without proper campaign-level tagging first.</div>
+        </div>
+      </div>
+  </section>
+
+  <!-- ============ ORGANIC ============ -->
+  <section class="sec" id="organic">
+    <div class="sec-hd">
+      <div class="sec-ic">↑</div>
+      <div><h3>Organic traffic growth</h3><span class="tag brand">GA4 · kazam.energy · Jul 2025–Jun 2026</span></div>
+    </div>
+
+    <div class="stats" style="margin:0 0 18px">
+      <div class="stat"><div class="lbl">Total sessions</div><div class="val">119,660</div></div>
+      <div class="stat m"><div class="lbl">New users</div><div class="val">81,505</div></div>
+      <div class="stat l"><div class="lbl">Organic Search sessions</div><div class="val">9,964</div></div>
+      <div class="stat d"><div class="lbl">Organic Social sessions</div><div class="val">32,630</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>New users per month</h4><span class="tag muted">GA4</span></div>
+      <div class="card-body"><div class="chart-wrap"><svg id="chartOrganic" viewBox="0 0 900 260"></svg></div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h4>Sessions by channel (FY)</h4><span class="tag muted">GA4 default channel grouping</span></div>
+      <div class="card-body">
+        <div class="bars-list" id="organicChannelBars"></div>
+        <div class="insight">Organic Search shows real traffic here (9,964 sessions, 1,513 new users) despite 0 HubSpot-attributed contacts all year from that source — a GA4↔CRM attribution gap, not zero organic activity.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Kazam · Internal Performance Review · Jul 2025–Jun 2026 · generated 6 Jul 2026</span>
+    <span>Sources: HubSpot CRM (live) · Zoho Bigin CRM (live) · Meta Ads MCP (live) · Google Ads via Windsor.ai (live) · Marketing_Leads_Tracker.xlsx (Nov'25–Jun'26 spend, tracker of record) · LinkedIn (tracker only, no connector)</span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var MONTHS = ["Jul'25","Aug'25","Sep'25","Oct'25","Nov'25","Dec'25","Jan'26","Feb'26","Mar'26","Apr'26","May'26","Jun'26"];
+  var css = getComputedStyle(document.documentElement);
+  function tok(name){ return css.getPropertyValue(name).trim(); }
+
+  function fmtInr(n){
+    if (n === null || n === undefined) return "—";
+    return "₹" + Math.round(n).toLocaleString("en-IN");
+  }
+  function fmtL(n){ return "₹" + (n/100000).toFixed(2) + "L"; }
+
+  // ---------- interactive chart engine: registry + tooltips + toggleable legends ----------
+  var charts = {};
+  var tip = document.createElement('div');
+  tip.id = 'tip';
+  document.body.appendChild(tip);
+  function moveTip(evt){
+    var r = tip.getBoundingClientRect();
+    var px = evt.clientX + 14, py = evt.clientY + 16;
+    if (px + r.width > window.innerWidth - 8) px = evt.clientX - r.width - 12;
+    if (py + r.height > window.innerHeight - 8) py = evt.clientY - r.height - 12;
+    tip.style.left = px + 'px'; tip.style.top = py + 'px';
+  }
+  function attachTip(elm, htmlFn){
+    elm.addEventListener('mouseenter', function(e){ tip.innerHTML = htmlFn(); tip.style.display = 'block'; moveTip(e); });
+    elm.addEventListener('mousemove', moveTip);
+    elm.addEventListener('mouseleave', function(){ tip.style.display = 'none'; });
+  }
+
+  function drawBarChart(svgId, months, series, opts){
+    charts[svgId] = {type:'bar', months:months, series:series, opts:opts||{}};
+    renderChart(svgId);
+  }
+  function drawLineChart(svgId, months, values, opts){
+    charts[svgId] = {type:'line', months:months, values:values, opts:opts||{}};
+    renderChart(svgId);
+  }
+  function renderChart(svgId){
+    var cfg = charts[svgId];
+    if (cfg.type === 'bar') renderBar(svgId, cfg); else renderLine(svgId, cfg);
+  }
+
+  function renderBar(svgId, cfg){
+    var months = cfg.months, opts = cfg.opts;
+    var series = cfg.series.filter(function(s){ return !s.hidden; });
+    var svg = document.getElementById(svgId);
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    var svgns = "http://www.w3.org/2000/svg";
+    function el(tag, attrs){ var e = document.createElementNS(svgns, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+    var W = svg.viewBox.baseVal.width || 900, H = svg.viewBox.baseVal.height || 300;
+    var padL = 46, padR = 14, padT = 14, padB = 28;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+    var n = months.length;
+    var groupW = plotW / n;
+    var grid = tok('--grid'), axis = tok('--axis'), muted = tok('--text-muted');
+
+    var defs = el('defs');
+    var pat = el('pattern', {id:'hatchPattern',width:6,height:6,patternTransform:'rotate(45)',patternUnits:'userSpaceOnUse'});
+    pat.appendChild(el('rect', {width:6,height:6,fill:tok('--unattr'),opacity:0.35}));
+    pat.appendChild(el('line', {x1:0,y1:0,x2:0,y2:6,stroke:tok('--unattr'),'stroke-width':2}));
+    defs.appendChild(pat);
+    svg.appendChild(defs);
+
+    if (!series.length){
+      var msg = el('text', {x:W/2,y:H/2,'text-anchor':'middle','font-size':12,fill:muted});
+      msg.textContent = "All series hidden — click a legend item to bring one back";
+      svg.appendChild(msg);
+      return;
+    }
+
+    var barW = opts.stacked ? groupW * 0.58 : (groupW * 0.72) / series.length;
+    var maxVal = 0;
+    for (var i = 0; i < n; i++){
+      if (opts.stacked){
+        var acc = 0;
+        for (var s = 0; s < series.length; s++) acc += (series[s].values[i] || 0);
+        maxVal = Math.max(maxVal, acc);
+      } else {
+        for (var s2 = 0; s2 < series.length; s2++) maxVal = Math.max(maxVal, series[s2].values[i] || 0);
+      }
+    }
+    maxVal = maxVal * 1.12 || 1;
+
+    var steps = 4;
+    for (var g = 0; g <= steps; g++){
+      var y = padT + plotH - (plotH * g / steps);
+      svg.appendChild(el('line', {x1:padL,y1:y,x2:W-padR,y2:y,stroke:grid,'stroke-width':1}));
+      var val = maxVal * g / steps;
+      var t = el('text', {x:padL-8,y:y+3,'text-anchor':'end','font-size':9.5,fill:muted});
+      t.textContent = opts.formatY ? opts.formatY(val) : Math.round(val);
+      svg.appendChild(t);
+    }
+
+    function fmtV(v){ return opts.formatVal ? opts.formatVal(v) : v; }
+
+    for (var i2 = 0; i2 < n; i2++){
+      var gx = padL + i2 * groupW;
+      if (opts.stacked){
+        var yCursor = padT + plotH;
+        var bx = gx + (groupW - barW)/2;
+        for (var s3 = 0; s3 < series.length; s3++){
+          var v = series[s3].values[i2] || 0;
+          if (v <= 0) continue;
+          var bh = (v / maxVal) * plotH;
+          yCursor -= bh;
+          var r = el('rect', {x:bx,y:yCursor,width:barW,height:Math.max(bh-1.5,0),rx:2,fill:series[s3].hatch ? 'url(#hatchPattern)' : series[s3].color,'class':'mark'});
+          (function(nm, mo, vv){ attachTip(r, function(){ return "<b>" + nm + "</b><br>" + mo + " · " + fmtV(vv); }); })(series[s3].name, months[i2], v);
+          svg.appendChild(r);
+          yCursor -= 1.5;
+        }
+      } else {
+        for (var s4 = 0; s4 < series.length; s4++){
+          var v2 = series[s4].values[i2] || 0;
+          var bh2 = (v2 / maxVal) * plotH;
+          var bx2 = gx + (groupW - barW*series.length)/2 + s4*barW;
+          var r2 = el('rect', {x:bx2,y:padT+plotH-bh2,width:barW*0.86,height:bh2,rx:2,fill:series[s4].color,'class':'mark'});
+          (function(nm, mo, vv){ attachTip(r2, function(){ return "<b>" + nm + "</b><br>" + mo + " · " + fmtV(vv); }); })(series[s4].name, months[i2], v2);
+          svg.appendChild(r2);
+        }
+      }
+      var xt = el('text', {x:gx+groupW/2,y:H-8,'text-anchor':'middle','font-size':9.5,fill:muted});
+      xt.textContent = months[i2];
+      svg.appendChild(xt);
+    }
+    svg.appendChild(el('line', {x1:padL,y1:padT+plotH,x2:W-padR,y2:padT+plotH,stroke:axis,'stroke-width':1}));
+  }
+
+  function buildLegend(containerId, chartId){
+    var c = document.getElementById(containerId);
+    c.innerHTML = "";
+    charts[chartId].series.forEach(function(s){
+      var li = document.createElement('div'); li.className = 'li clickable' + (s.hidden ? ' off' : '');
+      var sw = document.createElement('div'); sw.className = 'sw' + (s.hatch ? ' hatched' : '');
+      if (!s.hatch) sw.style.background = s.color;
+      var lb = document.createElement('span'); lb.textContent = s.name;
+      li.appendChild(sw); li.appendChild(lb);
+      li.addEventListener('click', function(){
+        s.hidden = !s.hidden;
+        li.classList.toggle('off', !!s.hidden);
+        renderChart(chartId);
+      });
+      c.appendChild(li);
+    });
+  }
+
+  // ---------- line/area chart (single series) ----------
+  function renderLine(svgId, cfg){
+    var months = cfg.months, values = cfg.values, opts = cfg.opts;
+    var svg = document.getElementById(svgId);
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    var svgns = "http://www.w3.org/2000/svg";
+    function el(tag, attrs){ var e = document.createElementNS(svgns, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+    var W = svg.viewBox.baseVal.width || 900, H = svg.viewBox.baseVal.height || 280;
+    var padL = 46, padR = 14, padT = 16, padB = 28;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+    var n = months.length;
+    var maxVal = Math.max.apply(null, values) * 1.15 || 1;
+    var grid = tok('--grid'), axis = tok('--axis'), muted = tok('--text-muted'), color = opts.color || tok('--s1');
+
+    var steps = 4;
+    for (var g = 0; g <= steps; g++){
+      var y = padT + plotH - (plotH * g / steps);
+      svg.appendChild(el('line', {x1:padL,y1:y,x2:W-padR,y2:y,stroke:grid,'stroke-width':1}));
+      var t = el('text', {x:padL-8,y:y+3,'text-anchor':'end','font-size':9.5,fill:muted});
+      t.textContent = opts.formatY ? opts.formatY(maxVal * g / steps) : Math.round(maxVal * g / steps);
+      svg.appendChild(t);
+    }
+
+    var stepX = plotW / (n-1);
+    var pts = [];
+    for (var i=0;i<n;i++) pts.push([padL + i*stepX, padT + plotH - (values[i]/maxVal)*plotH]);
+    var areaPath = "M" + pts[0][0] + "," + (padT+plotH);
+    pts.forEach(function(p){ areaPath += " L" + p[0] + "," + p[1]; });
+    areaPath += " L" + pts[pts.length-1][0] + "," + (padT+plotH) + " Z";
+    svg.appendChild(el('path', {d:areaPath, fill:color, opacity:0.14}));
+    svg.appendChild(el('path', {d:"M" + pts.map(function(p){return p[0]+","+p[1];}).join(" L"), fill:'none', stroke:color, 'stroke-width':2.5, 'stroke-linejoin':'round','stroke-linecap':'round'}));
+
+    pts.forEach(function(p,i){
+      svg.appendChild(el('circle', {cx:p[0],cy:p[1],r:(i===pts.length-1?4.5:3),fill:color,stroke:tok('--surface'),'stroke-width':1.5,'class':'mark'}));
+      var hit = el('circle', {cx:p[0],cy:p[1],r:11,fill:'transparent'});
+      attachTip(hit, function(){ return "<b>" + months[i] + "</b><br>" + (opts.formatVal ? opts.formatVal(values[i], i) : values[i]); });
+      svg.appendChild(hit);
+    });
+
+    svg.appendChild(el('line', {x1:padL,y1:padT+plotH,x2:W-padR,y2:padT+plotH,stroke:axis,'stroke-width':1}));
+    for (var j=0;j<n;j++){
+      var xt = el('text', {x:pts[j][0],y:H-8,'text-anchor':'middle','font-size':9.5,fill:muted});
+      xt.textContent = months[j];
+      svg.appendChild(xt);
+    }
+  }
+
+  function buildBarsList(containerId, rows, opts){
+    opts = opts || {};
+    var c = document.getElementById(containerId);
+    c.innerHTML = "";
+    var max = Math.max.apply(null, rows.map(function(r){return r.value;})) || 1;
+    rows.forEach(function(r){
+      var row = document.createElement('div'); row.className = 'bar-row';
+      var lbl = document.createElement('div'); lbl.className = 'lbl'; lbl.textContent = r.label;
+      var track = document.createElement('div'); track.className = 'track';
+      var fill = document.createElement('div'); fill.className = 'fill';
+      fill.style.width = Math.max((r.value/max)*100, 1.5) + "%";
+      fill.style.background = r.color;
+      track.appendChild(fill);
+      var val = document.createElement('div'); val.className = 'val';
+      var shown = opts.formatVal ? opts.formatVal(r.value, r) : r.value;
+      val.textContent = shown;
+      attachTip(row, function(){ return "<b>" + r.label + "</b><br>" + shown + (r.extra ? " · " + r.extra : ""); });
+      row.appendChild(lbl); row.appendChild(track); row.appendChild(val);
+      c.appendChild(row);
+    });
+  }
+
+  // ================= DATA =================
+
+  // -- Spend: Google Ads + Meta + LinkedIn --
+  // Live pulls (Windsor.ai / Meta Ads MCP), full year
+  var gAdsLive   = [56656,58872,241132,199825,244487,64828,126684,252233,211386,231394,171770,248112];
+  var gAdsClicks = [9271,5807,26923,15138,15917,9572,69410,31367,102657,115929,69431,73116];
+  var metaLive   = [24894,68439,12688,32718,3972,0,0,17002,27228,51403,24668,41941];
+  // Marketing_Leads_Tracker.xlsx — team's own record, Nov'25–Jun'26 only (null = outside tracker coverage)
+  var gAdsTracker = [null,null,null,null,245303,65548,132945,293641,244521,231318,170748,229019];
+  var metaTracker = [null,null,null,null,null,0,0,17002,32870,50111,24664,41941];
+  var liSpend     = [null,null,77900,160617,415016,83553,48483,223515,205323,210088,24748,0];
+  // Effective figures used for totals/charts: tracker where available, else live pull
+  var gAdsEff = gAdsLive.map(function(v,i){ return gAdsTracker[i]===null ? v : gAdsTracker[i]; });
+  var metaEff = metaLive.map(function(v,i){ return metaTracker[i]===null ? v : metaTracker[i]; });
+
+  var spendSeries = [
+    {name:"Google Ads", color: tok('--s1'), values: gAdsEff},
+    {name:"Meta", color: tok('--s2'), values: metaEff},
+    {name:"LinkedIn", color: tok('--s3'), values: liSpend.map(function(v){return v===null?0:v;})}
+  ];
+  drawBarChart('chartSpend', MONTHS, spendSeries, {stacked:true, formatY: function(v){return "₹"+Math.round(v/1000)+"K";}, formatVal: fmtInr});
+  buildLegend('legendSpend', 'chartSpend');
+
+  var gTotal = sum(gAdsEff);
+  var mTotal = sum(metaEff);
+  var liTotal = sum(liSpend.map(function(v){return v||0;}));
+  buildBarsList('platformBars', [
+    {label:"Google Ads", value:gTotal, color: tok('--s1')},
+    {label:"LinkedIn (10 mo. known)", value:liTotal, color: tok('--s3')},
+    {label:"Meta", value:mTotal, color: tok('--s2')}
+  ], {formatVal: function(v){return fmtL(v);}});
+
+  // HS-attributed monthly contacts by channel (all contacts, SaaS+Hardware combined) — used as the reliable "conversions" reference instead of platform pixels
+  var hsPaidSearchContacts = [53,10,60,66,31,23,147,370,375,362,326,472];
+  var hsPaidSocialContacts = [0,727,4,29,75,66,2,93,115,483,252,826];
+
+  // Google Ads table — single effective spend figure (tracker where available, else live pull)
+  (function(){
+    var t = document.getElementById('tblGoogleAds');
+    var head = "<thead><tr><th>Month</th><th style='text-align:right'>Spend</th><th style='text-align:right'>Clicks</th><th style='text-align:right'>HS contacts (Paid Search)</th></tr></thead>";
+    var rows = "<tbody>";
+    for (var i=0;i<MONTHS.length;i++){
+      rows += "<tr><td>"+MONTHS[i]+"</td><td style='text-align:right'>"+fmtInr(gAdsEff[i])+"</td><td style='text-align:right'>"+gAdsClicks[i].toLocaleString('en-IN')+"</td><td style='text-align:right'>"+hsPaidSearchContacts[i].toLocaleString('en-IN')+"</td></tr>";
+    }
+    rows += "<tr class='total'><td>FY Total</td><td style='text-align:right'>"+fmtInr(gTotal)+"</td><td style='text-align:right'>"+gAdsClicks.reduce(function(a,b){return a+b;},0).toLocaleString('en-IN')+"</td><td style='text-align:right'>"+sum(hsPaidSearchContacts).toLocaleString('en-IN')+"</td></tr></tbody>";
+    t.innerHTML = head + rows;
+  })();
+
+  // Meta table — single effective spend figure, leads referenced from HS contact data
+  (function(){
+    var t = document.getElementById('tblMeta');
+    var head = "<thead><tr><th>Month</th><th style='text-align:right'>Spend</th><th style='text-align:right'>HS contacts (Paid Social)</th></tr></thead>";
+    var rows = "<tbody>";
+    for (var i=0;i<MONTHS.length;i++){
+      rows += "<tr><td>"+MONTHS[i]+"</td><td style='text-align:right'>"+fmtInr(metaEff[i])+"</td><td style='text-align:right'>"+hsPaidSocialContacts[i].toLocaleString('en-IN')+"</td></tr>";
+    }
+    rows += "<tr class='total'><td>FY Total</td><td style='text-align:right'>"+fmtInr(mTotal)+"</td><td style='text-align:right'>"+sum(hsPaidSocialContacts).toLocaleString('en-IN')+"</td></tr></tbody>";
+    t.innerHTML = head + rows;
+  })();
+
+  // LinkedIn table — tracker only, no live connector
+  (function(){
+    var t = document.getElementById('tblLinkedIn');
+    var head = "<thead><tr><th>Month</th><th style='text-align:right'>Spend</th></tr></thead>";
+    var rows = "<tbody>";
+    for (var i=0;i<MONTHS.length;i++){
+      rows += "<tr><td>"+MONTHS[i]+"</td><td style='text-align:right'>"+(liSpend[i]===null?"<span style='color:var(--text-muted);font-weight:700'>NA</span>":fmtInr(liSpend[i]))+"</td></tr>";
+    }
+    rows += "<tr class='total'><td>FY Total (known, 10 mo.)</td><td style='text-align:right'>"+fmtInr(liTotal)+"</td></tr></tbody>";
+    t.innerHTML = head + rows;
+  })();
+
+  // -- Leads by source (HubSpot), SaaS = lead_category != Hardware, ads & forms only --
+  // Aug'25 Paid Social excludes 725 leads from the separate "Buzz" (P2P Energy) campaign — see chartP2P
+  function sum(a){return a.reduce(function(x,y){return x+y;},0);}
+  var paidSearch = [52,9,60,65,31,23,44,288,271,264,244,366];
+  var paidSocial  = [0,0,4,29,75,65,2,47,79,103,32,35];
+  var direct      = [57,79,69,42,62,77,75,132,110,152,205,165];
+  // Organic Search = 0 every month for SaaS too (not charted; see §Organic traffic)
+
+  var leadSeries = [
+    {name:"Paid Search", color: tok('--s1'), values: paidSearch},
+    {name:"Paid Social", color: tok('--s2'), values: paidSocial},
+    {name:"Direct Traffic", color: tok('--s4'), values: direct}
+  ];
+  drawBarChart('chartLeads', MONTHS, leadSeries, {stacked:true, formatVal: function(v){return v+" leads";}});
+  buildLegend('legendLeads', 'chartLeads');
+
+  buildBarsList('sourceBars', [
+    {label:"Paid Social", value:sum(paidSocial), color: tok('--s2')},
+    {label:"Paid Search", value:sum(paidSearch), color: tok('--s1')},
+    {label:"Direct Traffic", value:sum(direct), color: tok('--s4')}
+  ], {formatVal: function(v){ return v.toLocaleString('en-IN'); }});
+
+  // P2P Energy — "Buzz" campaign, kept separate from SaaS (813 total: 725 Paid Social in Aug'25 + 88 other channels/months)
+  var p2pBuzz = [9,763,3,5,1,5,3,4,9,5,4,2];
+  drawBarChart('chartP2P', MONTHS, [
+    {name:"P2P / Buzz campaign", color: tok('--s6'), values: p2pBuzz}
+  ], {stacked:true, formatVal:function(v){return v+" leads";}});
+
+  // Hardware leads per month — Bigin Contacts export (Jul 3), Feb–Jun 2026
+  var hwMonths = ["Feb'26","Mar'26","Apr'26","May'26","Jun'26"];
+  var hwBiginContacts = [254,456,724,463,1291];
+  drawBarChart('chartHwLeads', hwMonths, [
+    {name:"Hardware leads (Bigin)", color: tok('--s3'), values: hwBiginContacts}
+  ], {stacked:true, formatVal:function(v){return v+" leads";}});
+
+  // Hardware source mix — Bigin export (Jul 3) enriched with HubSpot email-match lookup; sums to 3,188
+  buildBarsList('hwSourceBars', [
+    {label:"Paid Social", value:1373, color: tok('--s2'), extra:"1,157 tagged in Bigin + 216 recovered from HubSpot"},
+    {label:"Paid Search", value:949, color: tok('--s1'), extra:"849 tagged in Bigin + 100 recovered from HubSpot"},
+    {label:"Direct Traffic", value:424, color: tok('--s4'), extra:"422 tagged in Bigin + 2 recovered from HubSpot"},
+    {label:"Offline / Forms / Other", value:230, color: tok('--s6'), extra:"227 tagged in Bigin + 3 recovered from HubSpot"},
+    {label:"Untagged", value:177, color: tok('--unattr'), extra:"was 498 before HubSpot email-match"},
+    {label:"Referral / AI", value:35, color: tok('--s5')}
+  ], {formatVal: function(v){ return v.toLocaleString('en-IN'); }});
+
+  // -- Deals (HubSpot inbound) --
+  var dealCount = [3,3,4,0,4,4,1,4,5,4,5,8];
+  var dealValueL = [2.13,2.79,7.97,0,26.34,43.27,3.50,7.10,29.38,15.30,26.15,46.26]; // Mar normalized ex-outlier
+  drawLineChart('chartDeals', MONTHS, dealValueL, {color: tok('--s1'), formatY:function(v){return "₹"+v.toFixed(0)+"L";}, formatVal:function(v,i){return "₹"+v.toFixed(2)+"L · "+dealCount[i]+" deal"+(dealCount[i]===1?"":"s")+" created";}});
+
+  buildBarsList('stageBars', [
+    {label:"Inactive", value:18, color: tok('--warn')},
+    {label:"Closed Won", value:12, color: tok('--good')},
+    {label:"Closed Lost", value:4, color: tok('--critical')},
+    {label:"Qualified to Buy", value:3, color: tok('--s1')},
+    {label:"Decision Maker Bought-In", value:3, color: tok('--s2')},
+    {label:"Appointment Scheduled", value:2, color: tok('--s5')},
+    {label:"Presentation Scheduled", value:2, color: tok('--s5')},
+    {label:"Contract Sent", value:1, color: tok('--s6')}
+  ], {formatVal: function(v){return v+" deals";}});
+
+  // Deal value by source/platform — hs_analytics_source on the deal object, all 45 deals
+  buildBarsList('dealSourceBars', [
+    {label:"Direct Traffic", value:30, color: tok('--s4')},
+    {label:"Paid Search", value:11, color: tok('--s1')},
+    {label:"Paid Social", value:3, color: tok('--s2'), extra:"incl. 1 LinkedIn deal (OFA International, ₹3.83L)"},
+    {label:"Referral", value:1, color: tok('--s5')}
+  ], {formatVal: function(v,r){
+    var val = {"Direct Traffic":"₹162.63L","Paid Search":"₹188.97L (includes the Wattpower deal, ₹154.75L)","Paid Social":"₹11.83L","Referral":"₹1.50L"}[r.label];
+    return v+" deals · "+val;
+  }});
+
+  // Hardware Closed Won table — Bigin Contacts export (Jul 3), by created month
+  (function(){
+    var months2 = ["Feb 2026","Mar 2026","Apr 2026","May 2026","Jun 2026"];
+    var won = [4,1,4,4,1];
+    var val = [80000,32000,109285,99940,10000];
+    var rows = "";
+    for (var i=0;i<months2.length;i++){
+      rows += "<tr><td>"+months2[i]+"</td><td style='text-align:right'>"+won[i]+"</td><td style='text-align:right'>"+fmtInr(val[i])+"</td></tr>";
+    }
+    rows += "<tr class='total'><td>Total</td><td style='text-align:right'>14</td><td style='text-align:right'>"+fmtInr(val.reduce(function(a,b){return a+b;},0))+"</td></tr>";
+    document.getElementById('hwWonRows').innerHTML = rows;
+  })();
+
+  // Hardware lead status disposition — Bigin Contacts export (Jul 3), Feb–Jun'26, 3,188 leads
+  buildBarsList('hwStatusBars', [
+    {label:"Not Responding (RnR)", value:1273, color: tok('--warn')},
+    {label:"Proposal Shared", value:888, color: tok('--s1')},
+    {label:"Not Interested", value:484, color: tok('--serious')},
+    {label:"Requested Call Back", value:332, color: tok('--s2')},
+    {label:"Just Looking for information", value:149, color: tok('--s5')},
+    {label:"Closed Lost", value:41, color: tok('--critical')},
+    {label:"Closed Won", value:14, color: tok('--good')},
+    {label:"Untagged", value:7, color: tok('--unattr')}
+  ], {formatVal: function(v){return v.toLocaleString('en-IN')+" ("+(v/3188*100).toFixed(1)+"%)";}});
+
+  // Quoted value (Deal Amount) by lead status — where a value is recorded
+  buildBarsList('hwValueBars', [
+    {label:"Proposal Shared", value:608.95, color: tok('--s1'), extra:"442 leads with quoted value"},
+    {label:"Requested Call Back", value:10.84, color: tok('--s2'), extra:"3 leads"},
+    {label:"Closed Won", value:3.31, color: tok('--good'), extra:"14 leads"},
+    {label:"Closed Lost", value:0.09, color: tok('--critical'), extra:"1 lead"},
+    {label:"Not Interested", value:0, color: tok('--serious'), na:true},
+    {label:"Just Looking for information", value:0, color: tok('--s5'), na:true},
+    {label:"Not Responding (RnR)", value:0, color: tok('--warn'), na:true}
+  ], {formatVal: function(v,r){return r.na ? "NA" : "₹"+v.toFixed(2)+"L";}});
+
+  // -- Organic traffic (GA4, kazam.energy) --
+  var organicNewUsers = [21682,28482,3541,2337,2015,2162,1980,4168,3440,3829,3719,4150];
+  drawLineChart('chartOrganic', MONTHS, organicNewUsers, {color: tok('--s4'), formatVal: function(v){return v.toLocaleString('en-IN')+" new users";}});
+
+  buildBarsList('organicChannelBars', [
+    {label:"Direct", value:33545, color: tok('--s4')},
+    {label:"Organic Social", value:32630, color: tok('--s2')},
+    {label:"Paid Search", value:20151, color: tok('--s1')},
+    {label:"Organic Search", value:9964, color: tok('--s6')},
+    {label:"Display", value:5249, color: tok('--unattr')},
+    {label:"Referral", value:4417, color: tok('--s5')},
+    {label:"Paid Social", value:1508, color: tok('--s2')}
+  ], {formatVal: function(v){ return v.toLocaleString('en-IN')+" sessions"; }});
+
+  // ---- nav scrollspy ----
+  var pills = Array.prototype.slice.call(document.querySelectorAll('nav.pills a'));
+  var spied = [];
+  pills.forEach(function(p){
+    var target = document.querySelector(p.getAttribute('href'));
+    if (target) spied.push({pill:p, sec:target});
+  });
+  if ('IntersectionObserver' in window && spied.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        pills.forEach(function(p){ p.classList.remove('active'); });
+        for (var k = 0; k < spied.length; k++){
+          if (spied[k].sec === en.target){ spied[k].pill.classList.add('active'); break; }
+        }
+      });
+    }, {rootMargin:'-30% 0px -60% 0px'});
+    spied.forEach(function(x){ io.observe(x.sec); });
+  }
+
+})();
+</script>
+</body>
+</html>
